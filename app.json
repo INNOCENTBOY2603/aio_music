@@ -63,17 +63,17 @@
         "required": true
       },
       "OWNER_USERNAME": {
-        "description": "OWNER USERNAME"
+        "description": "OWNER USERNAME",
         "value": "",
         "required": true
       },
       "SUPPORT_CHAT": {
-        "description": "CHAT"
+        "description": "CHAT",
         "value": "",
         "required": true
       },
       "SUPPORT_CHANNEL": {
-        "description": "CHANNEL"
+        "description": "CHANNEL",
         "value": "",
         "required": true
       }
