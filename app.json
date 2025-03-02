@@ -42,17 +42,17 @@
         "value": "",
         "required": true
       },
-      "OWNER_USERNAME":{
+      "OWNER_USERNAME": {
         "description": "OWNER USERNAME"
         "value": "",
         "required": true
       },
-      "SUPPORT_CHAT":{
+      "SUPPORT_CHAT": {
         "description": "CHAT"
         "value": "",
         "required": true
       },
-      "SUPPORT_CHANNEL":{
+      "SUPPORT_CHANNEL": {
         "description": "CHANNEL"
         "value": "",
         "required": true
