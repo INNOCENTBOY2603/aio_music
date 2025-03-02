@@ -42,21 +42,6 @@
         "value": "",
         "required": true
       },
-      "OWNER_USERNAME": {
-        "description": "OWNER USERNAME"
-        "value": "",
-        "required": true
-      },
-      "SUPPORT_CHAT": {
-        "description": "CHAT"
-        "value": "",
-        "required": true
-      },
-      "SUPPORT_CHANNEL": {
-        "description": "CHANNEL"
-        "value": "",
-        "required": true
-      },
       "HEROKU_API_KEY": {
         "description": "𝐅𝐈𝐋𝐋 𝐇𝐄𝐑𝐄 𝐘𝐎𝐔𝐑 𝐇𝐄𝐑𝐎𝐊𝐔 𝐀𝐂𝐂. 𝐀𝐏𝐈 𝐊𝐄𝐘, 𝐈𝐅 𝐃𝐎𝐍𝐓 𝐊𝐍𝐎𝐖 𝐓𝐇𝐈𝐒 𝐓𝐇𝐄𝐍 𝐋𝐄𝐀𝐕𝐄 𝐓𝐇𝐈𝐒 𝐋𝐈𝐍𝐄 𝐁𝐋𝐀𝐍𝐊",
         "value": "",
@@ -75,6 +60,21 @@
       "LOGGER_ID": {
         "description": "𝐅𝐈𝐋𝐋 𝐇𝐄𝐑𝐄 𝐋𝐎𝐆 𝐆𝐑𝐎𝐔𝐏 𝐈𝐃 𝐖𝐇𝐄𝐑𝐄 𝐘𝐎𝐔𝐑 𝐁𝐎𝐓 𝐀𝐋𝐖𝐀𝐘𝐒 𝐒𝐓𝐀𝐘 𝐀𝐃𝐌𝐈𝐍 (𝐈𝐃 𝐌𝐔𝐒𝐓 𝐒𝐓𝐀𝐑𝐓𝐄𝐃 𝐖𝐈𝐓𝐇 -100).",
         "value": "-1001992970818",
+        "required": true
+      },
+      "OWNER_USERNAME": {
+        "description": "OWNER USERNAME"
+        "value": "",
+        "required": true
+      },
+      "SUPPORT_CHAT": {
+        "description": "CHAT"
+        "value": "",
+        "required": true
+      },
+      "SUPPORT_CHANNEL": {
+        "description": "CHANNEL"
+        "value": "",
         "required": true
       }
     },
