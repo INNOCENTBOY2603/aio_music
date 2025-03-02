@@ -78,13 +78,16 @@ LOGGER = logging.getLogger("SYSTEM")
 if os.path.exists("Config.env"):
     load_dotenv("Config.env")
 
-API_ID = int(getenv("API_ID", 0))
+API_ID = int(getenv("API_ID", None))
 API_HASH = getenv("API_HASH", None)
 BOT_TOKEN = getenv("BOT_TOKEN", None)
 STRING_SESSION = getenv("STRING_SESSION", None)
 MONGO_DB_URL = getenv("MONGO_DB_URL", "mongodb+srv://Krishna:pss968048@cluster0.4rfuzro.mongodb.net/?retryWrites=true&w=majority")
-OWNER_ID = int(getenv("OWNER_ID", "5738579437"))
-LOG_GROUP_ID = int(getenv("LOG_GROUP_ID","-1001992970818"))
+OWNER_ID = int(getenv("OWNER_ID", "7507408570"))
+OWNER_USERNAME = getenv("OWNER_USERNAME",None)
+SUPPORT_CHAT = getenv("SUPPORT_CHAT",None)
+SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL",None)
+LOG_GROUP_ID = int(getenv("LOG_GROUP_ID","-1002453612342"))
 START_IMAGE_URL = getenv("START_IMAGE_URL","https://envs.sh/oKU.jpg")
 
 
@@ -179,7 +182,7 @@ async def main():
         LOGGER.info("'MONGO_DB_URL' - Not Found !!")
         sys.exit()
     try:
-        await mongo_async_cli.admin.command('ping')
+        await mongo_async_cli.admin.command('pingmusic')
     except Exception:
         LOGGER.info("❌ 'MONGO_DB_URL' - Not Valid !!")
         sys.exit()
@@ -221,7 +224,7 @@ async def main():
     LOGGER.info("✅ PyTgCalls Started.")
     await asyncio.sleep(1)
     LOGGER.info("✅ Sucessfully Hosted Your Bot !!")
-    LOGGER.info("✅ Now Do Visit: @Ur_Rishu_143 !!")
+    LOGGER.info(f"✅ Now Do Visit: @{OWNER_USERNAME} !!")
     await idle()
 
 
@@ -349,7 +352,7 @@ async def add_served_user(user_id: int):
 
 
 # Callback & Message Queries
-@bot.on_message(pyrofl.command(["start", "help"]) & pyrofl.private)
+@bot.on_message(pyrofl.command(["music", "help"]) & pyrofl.private)
 async def start_message_private(client, message):
     user_id = message.from_user.id
     mention = message.from_user.mention
@@ -388,7 +391,7 @@ async def start_message_private(client, message):
 » ✦ ʙєsᴛ ғєᴧᴛυꝛє ʙσᴛ ση ᴛєʟєɢꝛᴧϻ 
 » ✦ ᴧᴅᴅ ϻє ɢꝛσυᴘ ᴛσ sєє ϻʏ ᴘσᴡєʀ
 •──────────────────────•
-❖ 𝐏ᴏᴡᴇʀᴇᴅ ʙʏ  :-  [ʀɪsʜυ ʙσᴛ ](t.me/ur_rishu_143)❤️‍🔥
+❖ 𝐏ᴏᴡᴇʀᴇᴅ ʙʏ  :-  [ OWNER ](t.me/{OWNER_USERNAME})❤️‍🔥
 •──────────────────────•**"""
 
         buttons = InlineKeyboardMarkup(
@@ -444,11 +447,10 @@ async def start_message_private(client, message):
 CBUTTON = InlineKeyboardMarkup(
     inline_keyboard=[
         [
-            InlineKeyboardButton("˹ sᴜᴘᴘᴏꝛᴛ ˼", url="https://t.me/ur_support07")
+            InlineKeyboardButton("˹ sᴜᴘᴘᴏꝛᴛ ˼", url=SUPPORT_CHAT)
         ],
         [
-            InlineKeyboardButton("˹ ᴜᴘᴅᴧᴛᴇ ˼", url="https://t.me/Ur_rishu_143"),
-            InlineKeyboardButton("˹ ᴧʟʟ ʙᴏᴛ ˼", url="https://t.me/Vip_robotz/4")
+            InlineKeyboardButton("˹ ᴜᴘᴅᴧᴛᴇ ˼", url=SUPPORT_CHANNEL),
         ],
         [
             InlineKeyboardButton("↺ ʙᴧᴄᴋ ↻", callback_data="back_to_home")
@@ -466,7 +468,7 @@ ABUTTON = InlineKeyboardMarkup(
     ]
 )
 
-HELP_C = """```
+HELP_C = f"""```
 ⌬ ๏ ʟᴇᴛ's ɪɴᴛʀᴏᴅᴜᴄᴇ ᴍᴜsɪᴄ ʙᴏᴛ```
 
 **⌬ [【 ʀɪsʜυ-ϻυsɪᴄ 】](https://t.me/Ur_rishu_143) ɪs ᴏɴᴇ ᴏғ ᴛʜᴇ ʙᴇsᴛ ᴍᴜsɪᴄ | ᴠɪᴅᴇᴏ sᴛꝛᴇᴀᴍɪɴɢ ʙᴏᴛ ᴏɴ ᴛᴇʟᴇɢꝛᴧᴍ ғᴏꝛ ʏᴏᴜꝛ ɢꝛᴏᴜᴘs ᴀɴᴅ ᴄʜᴧɴɴᴇʟ**
@@ -481,9 +483,9 @@ HELP_C = """```
 
 ᴀʟʟ ᴛʜᴇ ғᴇᴀᴛᴜʀᴇs ᴀʀᴇ ᴡᴏʀᴋɪɴɢ ғɪɴᴇ
 
-⌬ ᴍᴏʀᴇ ɪɴғᴏ. [ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ](https://t.me/Ur_rishu_143)**"""
+⌬ ᴍᴏʀᴇ ɪɴғᴏ. [ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ](https://t.me/{OWNER_USERNAME})**"""
 
-HELP_X = """```
+HELP_X = f"""```
     【 ʀɪsʜυ-ϻυsɪᴄ 】 ᴍᴇɴᴜ```
 
 **ᴀʟʟ ᴄᴏᴍᴍᴀɴᴅs ᴄᴀɴ ʙᴇ ᴜsᴇᴅ ᴡɪᴛʜ : /
@@ -500,7 +502,7 @@ HELP_X = """```
 
 ✦ /end - Cʟᴇᴀʀ , ᴇɴᴅ ᴀʟʟ sᴏɴɢ [ᴀᴜɪᴅᴏ & ᴠɪᴅᴇᴏ]
 
-❖ 𝐏ᴏᴡᴇʀᴇᴅ ʙʏ - [ʀɪsʜυ ʙσᴛ](https://t.me/Ur_rishu_143)**"""
+❖ 𝐏ᴏᴡᴇʀᴇᴅ ʙʏ - [ʀɪsʜυ ʙσᴛ](https://t.me/{OWNER_USERNAME})**"""
 
 # Callback query handler
 @bot.on_callback_query(filters.regex("RISHU_RAJPUT"))
@@ -554,10 +556,6 @@ async def back_to_home_menu(client, query):
                 InlineKeyboardButton(
                     text="˹ ᴧʙᴏᴜᴛ ˼",
                     callback_data="RISHU",
-                ),
-                InlineKeyboardButton(
-                    text="˹ ʀᴇᴘᴏ ˼",
-                    url="https://github.com/Rishubot/RishuMusic",  # Callback data for Owner button
                 ),
             ]
         ]
